@@ -3,6 +3,7 @@ import { Cadastro } from '../model/Cadastro';
 import { AlertasService } from '../service/alertasService';
 import { CadastroService } from '../service/cadastro.service';
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -15,10 +16,11 @@ export class CadastroComponent implements OnInit {
   cadastro: Cadastro;
 
   constructor(
-    private alert: AlertasService
+    private alert: AlertasService,
+   
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 enviar(){

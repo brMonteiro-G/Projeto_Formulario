@@ -1,1 +1,7 @@
-<p>alertas works!</p>
+  
+<div class=" alert alert-{{type}} alert-dismissiible fade show m-0" role="alert">
+    {{message}}
+    <button (click)='onClose()' type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
