@@ -11,14 +11,16 @@ import { CadastroService } from '../service/cadastro.service';
 })
 export class CadastroComponent implements OnInit {
 
+  
   cadastro: Cadastro = new Cadastro
- 
 
 
   constructor(private alert: AlertasService,
     private cadastroService: CadastroService) {}
 
-  ngOnInit(){}
+  ngOnInit(
+    cadastro: Cadastro = new Cadastro
+  ){}
   
 
 enviar(){
@@ -30,17 +32,19 @@ enviar(){
   }
   if (this.cadastro.email.indexOf('@')  == -1 || this.cadastro.email.indexOf('.com') == -1 ){
     email = false 
-    this.alert.showAlertDanger('Email inválido! Formato: name@example.com') 
-    if(this.cadastro.telefone.length < 8 || this.cadastro.telefone.length > 10  ){
-      this.alert.showAlertDanger("Número de telefone inválido")
-    }
+    this.alert.showAlertDanger('Email inválido! Formato: name@example.com')
+  }
+  if(this.cadastro.telefone.length < 8 || this.cadastro.telefone.length > 10  ){
+    this.alert.showAlertDanger("Número de telefone inválido")
   }
   else {
         this.cadastroService.postCadastro(this.cadastro).subscribe((resp: Cadastro) => {
         this.cadastro = resp
-        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')}) 
+        this.alert.showAlertSuccess('Usuário cadastrado com sucesso!')
+        location.assign('/cadastro')
+        }) 
     }
 
-       
+    
 }
 }
