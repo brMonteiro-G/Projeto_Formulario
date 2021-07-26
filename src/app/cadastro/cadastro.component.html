@@ -1,37 +1,24 @@
-<div class="margin flex-container align-items-center">
-
-    
+<div class="margin  flex-container align-items-center ">
         <form class="form-inline">
-        
             <div class="form-group mx-sm-3 mb-2">
               <label for="inputName" class="sr-only">Nome</label>
-              <input [(ngModel)]='cadastro.nome' type="nome" class="form-control" id="nome" placeholder="Nome">
+              <input [(ngModel)]="cadastro.nome" name="nome" type="text" class="form-control" id="nome" placeholder="Nome">
             </div>
-          
           </form>
           <form>
-            
               <div class="form-group mx-sm-3 mb-2">
                 <label for="inputEmail" class="sr-only">Email</label>
-                <input [(ngModel)]='cadastro.email' type="email" class="form-control" id="email" placeholder="Email">
+                <input [(ngModel)]="cadastro.email" name="email" type="text" class="form-control" id="email" placeholder="Email">
               </div>
           </form>
           <form >
-        
               <div class="form-group mx-sm-3 mb-2">
                 <label for="inputTel" class="sr-only">Telefone</label>
-                <input [(ngModel)]='cadastro.telefone' type="telefone" class="form-control" id="telefone" placeholder="Telefone">
-               
-              </div>
-    
-             
+                <input [(ngModel)]="cadastro.telefone" name="telefone" type="text" class="form-control" id="telefone" placeholder="Telefone">
+              </div>   
           </form>
-    
-   
     <div>
-        <button (click)='enviar()' type="submit" class="btn btn-primary mb-2">Enviar</button>
+        <button (click)="enviar()" type="submit" class="btn btn-primary mb-2">Enviar</button>
     </div>
-   
-     
-
+    
 </div>  
