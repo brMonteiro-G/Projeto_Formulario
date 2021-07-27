@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projeto.calcme.model.Cadastro;
-import com.projeto.calcme.repository.CadastroRepository;
 import com.projeto.calcme.service.CadastroServiceImpl;
 
 @RestController
@@ -20,8 +19,6 @@ import com.projeto.calcme.service.CadastroServiceImpl;
 @CrossOrigin("*")
 public class CadastroController {
 
-	//@Autowired
-	//private CadastroRepository cadastroRepository; 
 	
 	@Autowired
 	private CadastroServiceImpl cadastroServiceImpl; 

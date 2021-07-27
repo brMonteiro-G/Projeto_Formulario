@@ -1,22 +1,27 @@
 package com.projeto.calcme.model;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="cadastros")
 public class Cadastro {
-	
-//	@Transient
-//	private static final String SEQUENCE_NAME="user_sequence";
-	
+
 	@Id
 	private String id; 
-	
+	@Indexed(unique=true)
+	@NotBlank(message="Campo obrigatório")
 	private String nome; 
 	
-	private String telefone; 
+	@NotBlank(message="Campo obrigatório")
+	@Indexed(unique=true)
+
+	private String telefone;
 	
+	@Indexed(unique=true)
+	@NotBlank(message="Campo obrigatório")
 	private String email;
 
 	public String getId() {

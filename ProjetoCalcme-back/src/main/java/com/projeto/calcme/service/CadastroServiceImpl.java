@@ -23,7 +23,8 @@ public class CadastroServiceImpl implements CadastroService {
 		try{
 		return this.cadastroRepository.save(cadastro);
 		}catch(Exception e) {
-			throw new CadastroException("Erro ao realizar o cadastro");
+			throw new CadastroException("Cadastro inválido --> " 
+					+ e.getMessage());
 		}
 		
 		
